@@ -2,18 +2,27 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Repositories\MongoRepository;
 use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Repositories\MysqlRepository;
+use Parse\ParseClient;
+use Parse\ParseQuery;
+
 
 class UsersController extends Controller
 {
     protected $usersDataInstance;
 
-    public function __construct(User $user)
+//    public function __construct(User $user)
+//    {
+//        $this->usersDataInstance = new MysqlRepository($user);
+//    }
+
+    public function __construct()
     {
-        $this->usersDataInstance = new MysqlRepository($user);
+        $this->usersDataInstance = new MongoRepository('_User');
     }
 
     /**
@@ -23,7 +32,7 @@ class UsersController extends Controller
      */
     public function index()
     {
-         print_r($this->usersDataInstance->all()->toArray());
+         print_r($this->usersDataInstance->all());
     }
 
     /**
@@ -33,7 +42,13 @@ class UsersController extends Controller
      */
     public function create()
     {
-        //
+        ParseClient::initialize('myAppId',null, 'KSJFKKJ3K4JK3J4K3JUWE89ISDJHFSJDFS');
+        ParseClient::setServerURL('http://localhost:1337', 'parse');
+        $user = new ParseQuery('_User');
+        $user = $user->get('00067ZZ6ul');
+        print_r($user);
+
+
     }
 
     /**
