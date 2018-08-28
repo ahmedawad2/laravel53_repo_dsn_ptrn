@@ -42,12 +42,6 @@ class UsersController extends Controller
      */
     public function create()
     {
-        ParseClient::initialize('myAppId',null, 'KSJFKKJ3K4JK3J4K3JUWE89ISDJHFSJDFS');
-        ParseClient::setServerURL('http://localhost:1337', 'parse');
-        $user = new ParseQuery('_User');
-        $user = $user->get('00067ZZ6ul');
-        print_r($user);
-
 
     }
 
