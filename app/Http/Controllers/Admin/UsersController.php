@@ -32,7 +32,7 @@ class UsersController extends Controller
      */
     public function index()
     {
-         print_r($this->usersDataInstance->all());
+        print_r($this->usersDataInstance->all());
     }
 
     /**
@@ -42,7 +42,9 @@ class UsersController extends Controller
      */
     public function create()
     {
-
+        //you have access to the files inside Config dir, those files returns array of configs, and you can access them like below:
+        print_r(config('app.name'));
+        print_r(config('session.driver'));
     }
 
     /**
@@ -62,9 +64,9 @@ class UsersController extends Controller
      * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(User $user)
     {
-        //
+        print_r($user);
     }
 
     /**
@@ -99,5 +101,12 @@ class UsersController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    // in case of now route model binding is used, you can name the parameter with a different name than in the route definition
+    // here, the method parameter name is: param, where in the routes definition, it's p
+    public function added($param)
+    {
+        return $param;
     }
 }
