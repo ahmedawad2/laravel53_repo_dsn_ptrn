@@ -1,0 +1,1 @@
+<li>{{ $module->name  }}</li>

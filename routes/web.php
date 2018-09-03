@@ -19,6 +19,10 @@ Route::get('/', function () {
 Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function () {
     Route::resource('users', 'UsersController');
     Route::get('users/added/{p}', 'UsersController@added');
+
+    Route::resource('posts', 'PostsController');
+    Route::resource('modules', 'ModulesController');
+
 });
 
 //using the variable instead of the static notation, remember: it's not a static calls, rather, a service location using facades.
