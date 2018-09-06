@@ -23,6 +23,12 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function () {
     Route::resource('posts', 'PostsController');
     Route::resource('modules', 'ModulesController');
 
+//    Route::get('tryouts/acceptJson', 'TryoutsController@acceptJson');
+
+    Route::group(['prefix' => 'tryouts'], function () {
+        Route::post('acceptJson', 'TryoutsController@acceptJson');
+    });
+
 });
 
 //using the variable instead of the static notation, remember: it's not a static calls, rather, a service location using facades.

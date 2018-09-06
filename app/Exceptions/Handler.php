@@ -47,9 +47,9 @@ class Handler extends ExceptionHandler
     {
         // a might be right handle for the no query results when using route model binding.
 
-        if ($exception->getCode() == 0) {
-            return 'no query results found for your provided value';
-        }
+//        if ($exception->getCode() == 0) {
+//            return 'no query results found for your provided value';
+//        }
         return parent::render($request, $exception);
     }
 

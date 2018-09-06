@@ -11,6 +11,6 @@
     <script type="text/javascript">
         alert('footer script is loaded!');
     </script>
-@endsection
+@show
 </body>
 </html>
