@@ -27,6 +27,7 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function () {
 
     Route::group(['prefix' => 'tryouts'], function () {
         Route::post('acceptJson', 'TryoutsController@acceptJson');
+        Route::get('index', 'TryoutsController@index');
     });
 
 });
