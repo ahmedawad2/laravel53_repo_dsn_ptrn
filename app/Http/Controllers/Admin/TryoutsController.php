@@ -13,4 +13,9 @@ class TryoutsController extends Controller
         print_r($request->json());
         print_r($request->json('_token'));
     }
+
+    public function index()
+    {
+        print_r('working fine');
+    }
 }
