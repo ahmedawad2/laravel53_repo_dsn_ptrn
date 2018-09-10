@@ -1,4 +1,5 @@
 <?php
+require_once 'MyConfigs.php';
 
 return [
 
@@ -54,11 +55,16 @@ return [
 
         'mysql' => [
             'driver' => 'mysql',
-            'host' => env('DB_HOST', '127.0.0.1'),
-            'port' => env('DB_PORT', '3306'),
-            'database' => env('DB_DATABASE', 'forge'),
-            'username' => env('DB_USERNAME', 'forge'),
-            'password' => env('DB_PASSWORD', ''),
+//            'host' => env('DB_HOST', '127.0.0.1'),
+            'host' => MYSQL_HOST,
+//            'port' => env('DB_PORT', '3306'),
+//            'database' => env('DB_DATABASE', 'forge'),
+//            'username' => env('DB_USERNAME', 'forge'),
+//            'password' => env('DB_PASSWORD', ''),
+            'port' => MYSQL_PORT,
+            'database' => MYSQL_DB,
+            'username' => MYSQL_USER,
+            'password' => MYSQL_PASS,
             'charset' => 'utf8',
             'collation' => 'utf8_unicode_ci',
             'prefix' => '',
@@ -67,11 +73,16 @@ return [
         ],
         'mongodb' => [
             'driver' => 'mongodb',
-            'host' => env('DB_HOST', 'localhost'),
-            'port' => env('DB_PORT', 27017),
-            'database' => env('DB_DATABASE'),
-            'username' => env('DB_USERNAME'),
-            'password' => env('DB_PASSWORD'),
+//            'host' => env('DB_HOST', 'localhost'),
+//            'port' => env('DB_PORT', 27017),
+//            'database' => env('DB_DATABASE'),
+//            'username' => env('DB_USERNAME'),
+//            'password' => env('DB_PASSWORD'),
+            'host' => MONGO_HOST,
+            'port' => MONGO_PORT,
+            'database' => MONGO_DB,
+            'username' => MONGO_USER,
+            'password' => MONGO_PASS,
             'options' => [
                 'database' => 'admin' // sets the authentication database required by mongo 3
             ]

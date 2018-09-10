@@ -30,6 +30,10 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function () {
         Route::get('index', 'TryoutsController@index');
     });
 
+    Route::group(['prefix' => 'mongoTryouts'], function(){
+        Route::get('index', 'MongoTryoutsController@index');
+    });
+
 });
 
 //using the variable instead of the static notation, remember: it's not a static calls, rather, a service location using facades.
